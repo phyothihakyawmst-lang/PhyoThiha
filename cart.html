@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Bean Boutique Coffee</title>
+    <meta name="description" content="View and manage your selected coffee items. Complete your purchase for the ultimate coffee experience.">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">BEAN<span>BOUTIQUE</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="selection.html">Selection</a></li>
+            <li><a href="equipment.html">Equipment</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="offers.html">Offers</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+            <div class="cart-icon" onclick="location.href='cart.html'">
+                <i class="fas fa-shopping-basket"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <i class="fas fa-bars mobile-menu-btn"></i>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="page-header header-cart">
+        <h1 data-aos="fade-down">Your Selections</h1>
+        <p data-aos="fade-up">A few clicks away from world-class coffee at your doorstep.</p>
+    </section>
+
+    <!-- Cart Layout -->
+    <section class="container cart-layout-grid">
+        
+        <!-- Cart Items List -->
+        <div class="cart-panel" data-aos="fade-right">
+            <h2 class="card-title mb-2" style="font-size: 2rem;">Shopping Bag</h2>
+            <div id="cartItems" class="flex flex-column gap-2">
+                <!-- Dynamically filled by JS -->
+                <p class="text-muted italic">Your cart is currently empty. <a href="selection.html" class="footer-link" style="color: var(--secondary); opacity: 1;">Browse Coffee</a></p>
+            </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="cart-summary-panel">
+            <h2 class="card-title mb-2" style="font-size: 1.8rem;">Order Summary</h2>
+            
+            <div id="itemizedSummary" class="mb-2" style="font-size: 0.9rem; color: #555; max-height: 200px; overflow-y: auto;">
+                <!-- Filled by JS -->
+            </div>
+            
+            <div class="summary-divider">
+                <div class="summary-row">
+                    <span class="summary-label">Subtotal</span>
+                    <span id="subtotal" class="summary-value">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Shipping</span>
+                    <span id="shipping" class="summary-value">$5.00</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Estimated Tax</span>
+                    <span id="tax" class="summary-value">$0.00</span>
+                </div>
+            </div>
+
+            <div class="summary-total">
+                <span>Total</span>
+                <span id="grandTotal">$0.00</span>
+            </div>
+
+            <button id="checkoutBtn" class="btn-primary" style="width: 100%;">Pay with Secure Checkout</button>
+            <div class="payment-badge-row">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-stripe"></i>
+                <i class="fas fa-lock"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <a href="index.html" class="logo">BEAN<span>BOUTIQUE</span></a>
+            <p class="footer-logo-section">Elevating your coffee experience since 2024.</p>
+        </div>
+        <div>
+            <h3 class="mb-1">Quick Links</h3>
+            <ul class="footer-links-list">
+                <li class="footer-link-item"><a href="selection.html" class="footer-link">Selection</a></li>
+                <li class="footer-link-item"><a href="equipment.html" class="footer-link">Equipment</a></li>
+                <li class="footer-link-item"><a href="events.html" class="footer-link">Events</a></li>
+                <li class="footer-link-item"><a href="contact.html" class="footer-link">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Build Cart Data UI
+        const buildCartUI = () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cartItems');
+            const itemizedSummaryEl = document.getElementById('itemizedSummary');
+            const subtotalEl = document.getElementById('subtotal');
+            const taxEl = document.getElementById('tax');
+            const grandTotalEl = document.getElementById('grandTotal');
+            const shipping = 5.00;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `<p class="text-muted italic">Your cart is currently empty. <a href="selection.html" style="color: var(--secondary); text-decoration: none; font-weight: 600;">Browse Coffee</a></p>`;
+                itemizedSummaryEl.innerHTML = '';
+                subtotalEl.textContent = `$0.00`;
+                taxEl.textContent = `$0.00`;
+                grandTotalEl.textContent = `$0.00`;
+                return;
+            }
+
+            let subtotal = 0;
+            let itemizedHTML = '';
+            cartItemsContainer.innerHTML = '';
+
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                // Detailed summary row
+                itemizedHTML += `
+                    <div class="summary-row" style="margin-bottom: 0.5rem; border-bottom: 1px dashed #eee; padding-bottom: 0.5rem;">
+                        <span style="max-width: 200px;">${item.name} <br> <small>$${item.price.toFixed(2)} x ${item.quantity}</small></span>
+                        <span>$${itemTotal.toFixed(2)}</span>
+                    </div>
+                `;
+
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item-row';
+                const itemImage = item.image || 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=200&auto=format&fit=crop';
+                itemDiv.innerHTML = `
+                    <div class="cart-item-info">
+                        <div class="cart-item-image">
+                            <img src="${itemImage}">
+                        </div>
+                        <div>
+                            <h4 class="card-title" style="font-size: 1.1rem;">${item.name}</h4>
+                            <p class="text-muted" style="font-size: 0.9rem;">$${item.price.toFixed(2)} / each</p>
+                        </div>
+                    </div>
+                    <div class="cart-controls">
+                        <div class="quantity-stepper">
+                            <i class="fas fa-minus quantity-btn" onclick="changeQuantity(${index}, -1)"></i>
+                            <span class="quantity-value">${item.quantity}</span>
+                            <i class="fas fa-plus quantity-btn" onclick="changeQuantity(${index}, 1)"></i>
+                        </div>
+                        <span class="item-total-price">$${(item.price * item.quantity).toFixed(2)}</span>
+                        <i class="fas fa-trash-alt remove-icon" onclick="removeItem(${index})"></i>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(itemDiv);
+            });
+
+            itemizedSummaryEl.innerHTML = itemizedHTML;
+            const tax = subtotal * 0.08;
+            subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+            taxEl.textContent = `$${tax.toFixed(2)}`;
+            grandTotalEl.textContent = `$${(subtotal + shipping + tax).toFixed(2)}`;
+        };
+
+        window.changeQuantity = (index, delta) => {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart[index].quantity += delta;
+            if (cart[index].quantity < 1) cart[index].quantity = 1;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            buildCartUI();
+            window.updateCartCount();
+        };
+
+        window.removeItem = (index) => {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            buildCartUI();
+            window.updateCartCount();
+        };
+
+        buildCartUI();
+
+        document.getElementById('checkoutBtn').addEventListener('click', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) {
+                Swal.fire('Empty Cart', 'Please add some items before checking out.', 'warning');
+                return;
+            }
+            Swal.fire({
+                title: 'Order Confirmed!',
+                text: 'Your specialty coffee is on its way.',
+                icon: 'success',
+                confirmButtonColor: 'var(--secondary)'
+            }).then(() => {
+                localStorage.removeItem('cart');
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

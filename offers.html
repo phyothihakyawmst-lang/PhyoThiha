@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers & Subscriptions - Bean Boutique Coffee</title>
+    <meta name="description" content="Exclusive coffee subscriptions and seasonal promotions. Join our loyalty program for the best value.">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">BEAN<span>BOUTIQUE</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="selection.html">Selection</a></li>
+            <li><a href="equipment.html">Equipment</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="offers.html">Offers</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+            <div class="cart-icon" onclick="location.href='cart.html'">
+                <i class="fas fa-shopping-basket"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <i class="fas fa-bars mobile-menu-btn"></i>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="page-header header-offers">
+        <h1 data-aos="fade-down">Exclusive Coffee Rewards</h1>
+        <p data-aos="fade-up">Fresh roasts delivered to your door, recurring excellence, and elite member benefits.</p>
+    </section>
+
+    <!-- Subscription Models -->
+    <section class="container flex flex-column items-center">
+        <h2 class="text-title text-center">Subscription Tiers</h2>
+        <p class="text-body text-center mb-3">Choose a plan that fits your coffee consumption and unlock exclusive perks.</p>
+
+        <div class="tier-grid">
+            
+            <!-- Tier 1: Silver -->
+            <div class="tier-card" data-aos="fade-up">
+                <div class="tier-badge badge-silver">SILVER</div>
+                <h3 class="tier-price">$29 <span class="tier-period">/mo</span></h3>
+                <p class="text-muted mb-2">Essential Weekly Freshness</p>
+                <ul class="tier-list">
+                    <li class="tier-list-item"><i class="fas fa-check-circle check-icon"></i> 2x 250g Blends Monthly</li>
+                    <li class="tier-list-item"><i class="fas fa-check-circle check-icon"></i> Standard Shipping Included</li>
+                    <li class="tier-list-item"><i class="fas fa-check-circle check-icon"></i> Cancel Anytime</li>
+                </ul>
+                <button class="btn-primary btn-outline" style="width: 100%;">Select Silver</button>
+            </div>
+
+            <!-- Tier 2: Gold -->
+            <div class="tier-card tier-card-gold" data-aos="fade-up" data-aos-delay="100">
+                <div class="tier-badge badge-popular">MOST POPULAR</div>
+                <div class="tier-badge badge-gold">GOLD</div>
+                <h3 class="tier-price-white">$49 <span class="tier-period-white">/mo</span></h3>
+                <p class="mb-2 opacity-8">The Artisan Experience</p>
+                <ul class="tier-list">
+                    <li class="tier-list-item-white"><i class="fas fa-check-circle check-icon-accent"></i> 4x 250g Single Origin Monthly</li>
+                    <li class="tier-list-item-white"><i class="fas fa-check-circle check-icon-accent"></i> Priority Express Delivery</li>
+                    <li class="tier-list-item-white"><i class="fas fa-check-circle check-icon-accent"></i> 10% Off All Equipment Purchases</li>
+                    <li class="tier-list-item-white"><i class="fas fa-check-circle check-icon-accent"></i> Exclusive Beans</li>
+                </ul>
+                <button class="btn-primary" style="background: var(--accent); width: 100%;">Select Gold</button>
+            </div>
+
+            <!-- Tier 3: Elite -->
+            <div class="tier-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="tier-badge badge-elite">ELITE</div>
+                <h3 class="tier-price">$89<span class="tier-period">/mo</span></h3>
+                <p class="text-muted mb-2">The Ultimate Coffee Connoisseur</p>
+                <ul class="tier-list">
+                    <li class="tier-list-item"><i class="fas fa-check-circle check-icon"></i> Unlimited Coffee Brews at Shop</li>
+                    <li class="tier-list-item"><i class="fas fa-check-circle check-icon"></i> 6x 250g Premium Reserve Monthly</li>
+                    <li class="tier-list-item"><i class="fas fa-check-circle check-icon"></i> Complimentary Annual Workshop</li>
+                    <li class="tier-list-item"><i class="fas fa-check-circle check-icon"></i> Personal Coffee Concierge Service</li>
+                </ul>
+                <button class="btn-primary btn-outline" style="width: 100%;">Reserve Elite Status</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Offers Section -->
+    <section id="promotions" class="bg-light container py-4 mt-3">
+        <div class="promo-offer-box" data-aos="zoom-in">
+            <div>
+                <span class="offer-label">LIMITED TIME</span>
+                <h2 class="text-title mt-1 mb-1">Summer Espresso Season</h2>
+                <p class="text-body mb-2">Celebrate the heat with our new cold-brew dedicated roasts. Buy any coffee maker this month and get a free starter pack.</p>
+                <div class="flex items-center gap-2">
+                    <div class="offer-stat-box">
+                        <h4 class="offer-stat-value">20%</h4>
+                        <p class="stat-label">Off Cold Brew Kits</p>
+                    </div>
+                    <div>
+                        <a href="selection.html" class="btn-primary">Redeem Summer Deal</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" class="rounded-lg shadow" style="width: 100%;">
+            </div>
+        </div>
+
+        <div class="promo-offer-box mt-3" data-aos="zoom-in" style="background: var(--bg-light); border: 2px dashed var(--accent);">
+            <div>
+                <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=800&auto=format&fit=crop" class="rounded-lg shadow" style="width: 100%;">
+            </div>
+            <div style="padding-left: 2rem;">
+                <span class="offer-label" style="background: var(--secondary);">WEEKEND SPECIAL</span>
+                <h2 class="text-title mt-1 mb-1">Artisan Brunch Bundle</h2>
+                <p class="text-body mb-2">The perfect morning pairing. Get any signature coffee and an Avocado Smashed Toast for a special price.</p>
+                <div class="flex items-center gap-2">
+                    <div class="offer-stat-box" style="background: var(--primary);">
+                        <h4 class="offer-stat-value" style="color: white;">$15</h4>
+                        <p class="stat-label" style="color: rgba(255,255,255,0.7);">All-in Deal</p>
+                    </div>
+                    <div>
+                        <a href="selection.html" class="btn-primary">Order Brunch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <a href="index.html" class="logo">BEAN<span>BOUTIQUE</span></a>
+            <p class="footer-logo-section">Elevating your coffee experience since 2024.</p>
+        </div>
+        <div>
+            <h3 class="mb-1">Quick Links</h3>
+            <ul class="footer-links-list">
+                <li class="footer-link-item"><a href="selection.html" class="footer-link">Selection</a></li>
+                <li class="footer-link-item"><a href="equipment.html" class="footer-link">Equipment</a></li>
+                <li class="footer-link-item"><a href="events.html" class="footer-link">Events</a></li>
+                <li class="footer-link-item"><a href="contact.html" class="footer-link">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>

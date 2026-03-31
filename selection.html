@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Selection - Bean Boutique Coffee</title>
+    <meta name="description" content="Explore our premium coffee blends and single-origin coffees. Handpicked and roasted for perfection.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">BEAN<span>BOUTIQUE</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="selection.html">Selection</a></li>
+            <li><a href="equipment.html">Equipment</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="offers.html">Offers</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+            <div class="cart-icon" onclick="location.href='cart.html'">
+                <i class="fas fa-shopping-basket"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <i class="fas fa-bars mobile-menu-btn"></i>
+        </div>
+    </nav>
+
+    <section class="page-header header-selection">
+        <h1 data-aos="fade-down">The Artisan Collection</h1>
+        <p data-aos="fade-up">Curated blends and single-origin specialties for true connoisseurs.</p>
+    </section>
+
+    <section class="container pb-1">
+        <div class="search-filter-bar shadow rounded-lg">
+            <i class="fas fa-search" style="color: var(--secondary);"></i>
+            <input type="text" id="searchInput" placeholder="Search for your favorite blend (e.g., 'Espirito', 'Midnight')..." class="search-input">
+            <div class="filter-btn-group">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="single-origin">Single Origin</button>
+                <button class="filter-btn" data-filter="blend">Blends</button>
+                <button class="filter-btn" data-filter="pastries">Pastries</button>
+                <button class="filter-btn" data-filter="food">Food</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="selectionGrid" class="container grid grid-auto gap-4 pt-1">
+        
+        <div class="product-card" data-category="single-origin" data-name="May Myo Fresh Coffee" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="images/Mya%20Myo.jpg">
+                <div class="badge">Light Roast</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">May Myo Fresh Coffee</h3>
+                <p class="mb-1 text-muted">Creamy nutty chocolate with a hint of citrus.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$18.50</span>
+                    <button class="add-to-cart btn-dark" data-id="1" data-name="May Myo Fresh Coffee" data-price="18.50">
+                        <i class="fas fa-shopping-basket"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="blend" data-name="Midnight Velvet Blend" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1580933073521-dc49ac0d4e6a?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Dark Roast</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Midnight Velvet Blend</h3>
+                <p class="mb-1 text-muted">Bold, smoky, and intense. Perfect for espresso lovers.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$16.00</span>
+                    <button class="add-to-cart btn-dark" data-id="2" data-name="Midnight Velvet Blend" data-price="16.00">
+                        <i class="fas fa-shopping-basket"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="single-origin" data-name="Ethiopian Yirgacheffe" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1610632380989-680fe40816c6?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Medium Roast</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Ethiopian Yirgacheffe</h3>
+                <p class="mb-1 text-muted">Floral aroma, jasmine and lemon notes.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$21.00</span>
+                    <button class="add-to-cart btn-dark" data-id="3" data-name="Ethiopian Yirgacheffe" data-price="21.00">
+                        <i class="fas fa-shopping-basket"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="single-origin" data-name="Sunrise Ritual Blend" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Light-Medium</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Sunrise Ritual Blend</h3>
+                <p class="mb-1 text-muted">Balanced caramel with a slight fruity finish.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$17.00</span>
+                    <button class="add-to-cart btn-dark" data-id="4" data-name="Sunrise Ritual Blend" data-price="17.00">
+                        <i class="fas fa-shopping-basket"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 5: Colombian Huila -->
+        <div class="product-card" data-category="single-origin" data-name="Colombian Huila Supreme" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="images/Colombian%20Coffee%20-%20Etsy.jpg">
+                <div class="badge">Medium Roast</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Colombian Huila Supreme</h3>
+                <p class="mb-1 text-muted">Silky body with sweet cherry and caramel notes.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$19.00</span>
+                    <button class="add-to-cart btn-dark" data-id="5" data-name="Colombian Huila" data-price="19.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 6: Sumatra Mandheling -->
+        <div class="product-card" data-category="single-origin" data-name="Sumatra Mandheling" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="images/Sumatra%20coffee.jpg">
+                <div class="badge">Dark Roast</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Sumatra Mandheling</h3>
+                <p class="mb-1 text-muted">Earthy, herbal, and heavy body. Low acidity.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$20.00</span>
+                    <button class="add-to-cart btn-dark" data-id="6" data-name="Sumatra Mandheling" data-price="20.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 7: Guatemala Antigua -->
+        <div class="product-card" data-category="single-origin" data-name="Guatemala Antigua" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Medium Roast</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Guatemala Antigua</h3>
+                <p class="mb-1 text-muted">Spicy floral notes with a refined chocolate finish.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$22.00</span>
+                    <button class="add-to-cart btn-dark" data-id="7" data-name="Guatemala Antigua" data-price="22.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 8: Kenya AA Plus -->
+        <div class="product-card" data-category="single-origin" data-name="Kenya AA Plus" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1485182708500-e8f1f318ba72?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Light-Medium</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Kenya AA Plus</h3>
+                <p class="mb-1 text-muted">Vibrant acidity with intense blackcurrant and winey finish.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$25.00</span>
+                    <button class="add-to-cart btn-dark" data-id="8" data-name="Kenya AA Plus" data-price="25.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 9: Costa Rica Tarrazu -->
+        <div class="product-card" data-category="single-origin" data-name="Costa Rica Tarrazu" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1525088553748-01d6e210e00b?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Medium Roast</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Costa Rica Tarrazu</h3>
+                <p class="mb-1 text-muted">Crisp and clean with bright citrus and honey notes.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$21.50</span>
+                    <button class="add-to-cart btn-dark" data-id="9" data-name="Costa Rica Tarrazu" data-price="21.50">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 10: Tanzania Peaberry -->
+        <div class="product-card" data-category="single-origin" data-name="Tanzania Peaberry" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1497515114629-f71d758fd330?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Light Roast</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Tanzania Peaberry</h3>
+                <p class="mb-1 text-muted">Concentrated flavor with a sharp lemon acidity.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$23.00</span>
+                    <button class="add-to-cart btn-dark" data-id="10" data-name="Tanzania Peaberry" data-price="23.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 11: Boutique Espresso Blend -->
+        <div class="product-card" data-category="blend" data-name="Boutique Espresso Blend" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Extra Dark</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Boutique Espresso Blend</h3>
+                <p class="mb-1 text-muted">Thick crema with a chocolatey, intense kick.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$19.50</span>
+                    <button class="add-to-cart btn-dark" data-id="11" data-name="Espresso Blend" data-price="19.50">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 12: Vanilla Bean Infusion -->
+        <div class="product-card" data-category="blend" data-name="Vanilla Bean Infusion" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Medium Roast</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Vanilla Bean Infusion</h3>
+                <p class="mb-1 text-muted">Smooth Arabica infused with premium Madagascar vanilla.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$20.00</span>
+                    <button class="add-to-cart btn-dark" data-id="12" data-name="Vanilla Infusion" data-price="20.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 13: Hazelnut Dream Blend -->
+        <div class="product-card" data-category="blend" data-name="Hazelnut Dream Blend" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Light-Medium</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Hazelnut Dream Blend</h3>
+                <p class="mb-1 text-muted">A sweet, nutty escape with every morning cup.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$18.50</span>
+                    <button class="add-to-cart btn-dark" data-id="13" data-name="Hazelnut Dream" data-price="18.50">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 14: Highland Mist Decaf -->
+        <div class="product-card" data-category="single-origin" data-name="Highland Mist Decaf" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Medium Roast</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Highland Mist Decaf</h3>
+                <p class="mb-1 text-muted">99.9% Caffeine free. Full flavor without the jitters.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$17.50</span>
+                    <button class="add-to-cart btn-dark" data-id="14" data-name="Highland Decaf" data-price="17.50">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 15: Winter Spiced Blend -->
+        <div class="product-card" data-category="blend" data-name="Winter Spiced Blend" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1544787210-2211d4e315cc?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Medium-Dark</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Winter Spiced Blend</h3>
+                <p class="mb-1 text-muted">Warm notes of cinnamon and nutmeg. Holiday in a cup.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$22.00</span>
+                    <button class="add-to-cart btn-dark" data-id="15" data-name="Winter Spiced" data-price="22.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 16: Misty Mountain Blend -->
+        <div class="product-card" data-category="blend" data-name="Misty Mountain Blend" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Medium Roast</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Misty Mountain Blend</h3>
+                <p class="mb-1 text-muted">Fresh, earthy, and clean. Like a mountain morning.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$16.50</span>
+                    <button class="add-to-cart btn-dark" data-id="16" data-name="Misty Mountain" data-price="16.50">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 17: Pacific North Roast -->
+        <div class="product-card" data-category="blend" data-name="Pacific North Roast" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Dark Roast</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Pacific North Roast</h3>
+                <p class="mb-1 text-muted">Deep, woody, and robust. Pacific coast inspiration.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$19.00</span>
+                    <button class="add-to-cart btn-dark" data-id="17" data-name="Pacific Roast" data-price="19.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 18: Artisan Breakfast Blend -->
+        <div class="product-card" data-category="blend" data-name="Artisan Breakfast Blend" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Light Roast</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Artisan Breakfast Blend</h3>
+                <p class="mb-1 text-muted">Easy drinking, high caffeine, perfect start.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$15.50</span>
+                    <button class="add-to-cart btn-dark" data-id="18" data-name="Breakfast Blend" data-price="15.50">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 19: Papua New Guinea Sigri -->
+        <div class="product-card" data-category="single-origin" data-name="Papua New Guinea Sigri" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Medium-Dark</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Papua New Guinea Sigri</h3>
+                <p class="mb-1 text-muted">Exotic fruitiness with a clean, smooth finish.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$24.00</span>
+                    <button class="add-to-cart btn-dark" data-id="19" data-name="PNG Sigri" data-price="24.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee 20: Honduras Copan -->
+        <div class="product-card" data-category="single-origin" data-name="Honduras Copan" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1485128132919-52618ad5405b?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Medium Roast</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Honduras Copan</h3>
+                <p class="mb-1 text-muted">Classic chocolate and nutty profile. Very reliable.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$18.00</span>
+                    <button class="add-to-cart btn-dark" data-id="20" data-name="Honduras Copan" data-price="18.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Pastry 1: Butter Croissant -->
+        <div class="product-card" data-category="pastries" data-name="Artisan Butter Croissant" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Freshly Baked</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Artisan Butter Croissant</h3>
+                <p class="mb-1 text-muted">Flaky, buttery layers that melt in your mouth.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$4.50</span>
+                    <button class="add-to-cart btn-dark" data-id="101" data-name="Butter Croissant" data-price="4.50">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pastry 2: Blueberry Cheesecake -->
+        <div class="product-card" data-category="pastries" data-name="Blueberry Cheesecake Slice" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Dessert</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Blueberry Cheesecake Slice</h3>
+                <p class="mb-1 text-muted">Rich creamy cheesecake with fresh blueberry coulis.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$6.00</span>
+                    <button class="add-to-cart btn-dark" data-id="102" data-name="Blueberry Cheesecake" data-price="6.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pastry 3: Chocolate Muffin -->
+        <div class="product-card" data-category="pastries" data-name="Double Chocolate Muffin" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1624953587687-daf2af74421c?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Must-Try</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Double Chocolate Muffin</h3>
+                <p class="mb-1 text-muted">Moist muffin packed with dark chocolate chips.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$3.50</span>
+                    <button class="add-to-cart btn-dark" data-id="103" data-name="Chocolate Muffin" data-price="3.50">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pastry 4: Almond Biscotti -->
+        <div class="product-card" data-category="pastries" data-name="Almond Biscotti (2pcs)" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1619038480411-38ecf2d1ce63?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Coffee Mate</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Almond Biscotti (2pcs)</h3>
+                <p class="mb-1 text-muted">Crunchy almond biscuits, perfect for dipping.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$2.75</span>
+                    <button class="add-to-cart btn-dark" data-id="104" data-name="Almond Biscotti" data-price="2.75">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pastry 5: Macaron Box -->
+        <div class="product-card" data-category="pastries" data-name="Petite Macaron Box" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1569156882087-9f1739988220?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Gift Set</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Petite Macaron Box (4pcs)</h3>
+                <p class="mb-1 text-muted">Assorted French macarons - colorful and sweet.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$8.00</span>
+                    <button class="add-to-cart btn-dark" data-id="105" data-name="Macaron Box" data-price="8.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pastry 6: Red Velvet Cupcake -->
+        <div class="product-card" data-category="pastries" data-name="Red Velvet Cupcake" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1614707267537-b85af00c4b81?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Limited</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Red Velvet Cupcake</h3>
+                <p class="mb-1 text-muted">Velvety sponge with creamy cream cheese frosting.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$4.25</span>
+                    <button class="add-to-cart btn-dark" data-id="106" data-name="Red Velvet Cupcake" data-price="4.25">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pastry 7: Carrot Cake Slice -->
+        <div class="product-card" data-category="pastries" data-name="Spiced Carrot Cake" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Traditional</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Spiced Carrot Cake</h3>
+                <p class="mb-1 text-muted">Walnut-studded carrot cake with spicy aroma.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$5.50</span>
+                    <button class="add-to-cart btn-dark" data-id="107" data-name="Carrot Cake" data-price="5.50">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pastry 8: Tiramisu Cup -->
+        <div class="product-card" data-category="pastries" data-name="Artisan Tiramisu Cup" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Chef's Special</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Artisan Tiramisu Cup</h3>
+                <p class="mb-1 text-muted">Espresso-soaked layers with mascarpone magic.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$6.50</span>
+                    <button class="add-to-cart btn-dark" data-id="108" data-name="Tiramisu Cup" data-price="6.50">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food 1: Avocado Toast -->
+        <div class="product-card" data-category="food" data-name="Avocado Smashed Toast" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Healthy Choice</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Avocado Smashed Toast</h3>
+                <p class="mb-1 text-muted">Sourdough topped with smashed avocado, poached egg, and chili flakes.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$12.00</span>
+                    <button class="add-to-cart btn-dark" data-id="201" data-name="Avocado Toast" data-price="12.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food 2: Grilled Chicken Panini -->
+        <div class="product-card" data-category="food" data-name="Grilled Chicken Panini" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Hot Served</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Grilled Chicken Panini</h3>
+                <p class="mb-1 text-muted">Juicy chicken with melted mozzarella and pesto on artisan bread.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$14.50</span>
+                    <button class="add-to-cart btn-dark" data-id="202" data-name="Chicken Panini" data-price="14.50">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food 3: Smoked Salmon Bagel -->
+        <div class="product-card" data-category="food" data-name="Smoked Salmon Bagel" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1496048977149-65f57713001c?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Premium</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Smoked Salmon Bagel</h3>
+                <p class="mb-1 text-muted">Cream cheese, capers, onions, and premium smoked salmon on a toasted bagel.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$15.00</span>
+                    <button class="add-to-cart btn-dark" data-id="203" data-name="Salmon Bagel" data-price="15.00">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food 4: Quinoa Bowl -->
+        <div class="product-card" data-category="food" data-name="Mediterranean Quinoa Bowl" data-aos="fade-up">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop">
+                <div class="badge">Vegan</div>
+            </div>
+            <div class="card-content-padding">
+                <h3 class="card-title">Mediterranean Quinoa Bowl</h3>
+                <p class="mb-1 text-muted">A vibrant mix of quinoa, chickpeas, olives, and fresh vegetables.</p>
+                <div class="flex-between mt-1">
+                    <span class="card-price">$11.50</span>
+                    <button class="add-to-cart btn-dark" data-id="204" data-name="Quinoa Bowl" data-price="11.50">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <a href="index.html" class="logo">BEAN<span>BOUTIQUE</span></a>
+            <p style="margin-top: 1.5rem; opacity: 0.8; font-size: 0.9rem;">Elevating your coffee experience one bean at a time. Crafting excellence since 2024.</p>
+        </div>
+        <div>
+            <h3 class="mb-1">Quick Links</h3>
+            <ul class="footer-links-list">
+                <li class="footer-link-item"><a href="selection.html" class="footer-link">Selection</a></li>
+                <li class="footer-link-item"><a href="equipment.html" class="footer-link">Equipment</a></li>
+                <li class="footer-link-item"><a href="events.html" class="footer-link">Events</a></li>
+                <li class="footer-link-item"><a href="contact.html" class="footer-link">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        const searchInput = document.getElementById('searchInput');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const products = document.querySelectorAll('.product-card');
+        const filterItems = () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+            products.forEach(product => {
+                const name = product.dataset.name.toLowerCase();
+                const category = product.dataset.category;
+                const matchesSearch = name.includes(searchTerm);
+                const matchesFilter = activeFilter === 'all' || category === activeFilter;
+                if (matchesSearch && matchesFilter) {
+                    product.style.display = 'block';
+                    setTimeout(() => { product.style.opacity = '1'; }, 10);
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        };
+        searchInput.addEventListener('input', filterItems);
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => { b.classList.remove('active'); b.style.background = '#eee'; b.style.color = '#555'; });
+                btn.classList.add('active');
+                btn.style.background = 'var(--secondary)';
+                btn.style.color = 'white';
+                filterItems();
+            });
+        });
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.dataset.name;
+                const price = parseFloat(button.dataset.price);
+                const id = button.dataset.id;
+                const image = button.closest('.product-card').querySelector('img').src;
+                
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const item = cart.find(i => i.id === id);
+                if (item) {
+                    item.quantity += 1;
+                } else {
+                    cart.push({ id, name, price, image, quantity: 1 });
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                window.updateCartCount();
+                Swal.fire({ title: 'Added!', text: `${name} in basket.`, icon: 'success', toast: true, position: 'top-end', timer: 1500, showConfirmButton: false });
+            });
+        });
+    </script>
+</body>
+</html>

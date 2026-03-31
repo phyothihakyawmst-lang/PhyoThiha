@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewing Equipment - Bean Boutique Coffee</title>
+    <meta name="description" content="Professional brewing equipment for the ultimate home coffee experience. Grinders, drippers, and accessories.">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">BEAN<span>BOUTIQUE</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="selection.html">Selection</a></li>
+            <li><a href="equipment.html">Equipment</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="offers.html">Offers</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+            <div class="cart-icon" onclick="location.href='cart.html'">
+                <i class="fas fa-shopping-basket"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <i class="fas fa-bars mobile-menu-btn"></i>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="page-header header-equipment">
+        <h1 data-aos="fade-down">Master Your Brew</h1>
+        <p data-aos="fade-up">Professional tools for the home barista. Precision, durability, and style.</p>
+    </section>
+
+    <!-- Equipment Grid -->
+    <section class="grid grid-auto gap-4 pt-1 container">
+        
+        <!-- Equipment 1: Burr Grinder -->
+        <div class="equipment-card product-card" data-aos="fade-up">
+            <div class="equipment-image">
+                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                    <source src="images/coffee.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="equipment-body">
+                <h3 class="card-title mb-1">Elite Precision Burr Grinder</h3>
+                <p class="text-body mb-2">Achieve the perfect consistency for any brew method with 40+ adjustable grind settings.</p>
+                
+                <div class="tip-box">
+                    <h4 class="tip-title">Barista Tip:</h4>
+                    <p class="tip-text">Store your beans in a cool, dark place and grind them right before brewing for maximum flavor.</p>
+                </div>
+
+                <div class="flex-between mt-1">
+                    <span style="font-size: 1.8rem; font-weight: 700; color: var(--primary);">$249.00</span>
+                    <button class="add-to-cart btn-dark" data-id="e1" data-name="Elite Precision Grinder" data-price="249.00" style="padding: 1rem 2rem;">Purchase</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Equipment 2: Ceramic Dripper -->
+        <div class="equipment-card product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="equipment-image">
+                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                    <source src="images/making-coffee-2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="equipment-body">
+                <h3 class="card-title mb-1">Artisan Ceramic Dripper V2</h3>
+                <p class="text-body mb-2">Hand-crafted ceramic dripper designed for optimal heat retention and clean flavor profiles.</p>
+                
+                <div class="tip-box">
+                    <h4 class="tip-title">How to Use:</h4>
+                    <p class="tip-text">Rinse the filter with hot water first. Use a circular motion during pour-over for even extraction.</p>
+                </div>
+
+                <div class="flex-between mt-1">
+                    <span style="font-size: 1.8rem; font-weight: 700; color: var(--primary);">$45.00</span>
+                    <button class="add-to-cart btn-dark" data-id="e2" data-name="Ceramic Dripper V2" data-price="45.00" style="padding: 1rem 2rem;">Purchase</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Equipment 3: Variable Kettle -->
+        <div class="equipment-card product-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="equipment-image">
+                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                    <source src="images/MakingCoffeClip.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="equipment-body">
+                <h3 class="card-title mb-1">Smart Temp Gooseneck Kettle</h3>
+                <p class="text-body mb-2">Maintain the exact temperature for your specific coffee beans with ±1 degree precision control.</p>
+                
+                <div class="tip-box">
+                    <h4 class="tip-title">Precision:</h4>
+                    <p class="tip-text">Adjust to 92°C-96°C range for light to medium roasts to avoid bitter extraction.</p>
+                </div>
+
+                <div class="flex-between mt-1">
+                    <span style="font-size: 1.8rem; font-weight: 700; color: var(--primary);">$159.00</span>
+                    <button class="add-to-cart btn-dark" data-id="e3" data-name="Smart Gooseneck Kettle" data-price="159.00" style="padding: 1rem 2rem;">Purchase</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Equipment 4: AeroPress Precision Brewer -->
+        <div class="equipment-card product-card" data-aos="fade-up">
+            <div class="equipment-image">
+                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                    <source src="images/making-coffee-3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="equipment-body">
+                <h3 class="card-title mb-1">AeroPress Precision Brewer</h3>
+                <p class="text-body mb-2">The ultimate travel-friendly brewer. Versatile and durable, it produces exceptionally clean coffee.</p>
+                
+                <div class="tip-box">
+                    <h4 class="tip-title">Barista Tip:</h4>
+                    <p class="tip-text">Try the inverted method for more control over steep time and a bolder extraction.</p>
+                </div>
+
+                <div class="flex-between mt-1">
+                    <span style="font-size: 1.8rem; font-weight: 700; color: var(--primary);">$40.00</span>
+                    <button class="add-to-cart btn-dark" data-id="e4" data-name="AeroPress Brewer" data-price="40.00" style="padding: 1rem 2rem;">Purchase</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Equipment 5: Classic French Press (8-Cup) -->
+        <div class="equipment-card product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="equipment-image">
+                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                    <source src="https://player.vimeo.com/external/494191439.hd.mp4?s=d0092305561a067a9980d287532d847849ed6705&profile_id=174" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="equipment-body">
+                <h3 class="card-title mb-1">Classic French Press (8-Cup)</h3>
+                <p class="text-body mb-2">A timeless brewing classic. Heat-resistant borosilicate glass with a triple-layer filter.</p>
+                
+                <div class="tip-box">
+                    <h4 class="tip-title">How to Use:</h4>
+                    <p class="tip-text">Use a coarse grind and steep for 4 minutes before plunging slowly.</p>
+                </div>
+
+                <div class="flex-between mt-1">
+                    <span style="font-size: 1.8rem; font-weight: 700; color: var(--primary);">$35.00</span>
+                    <button class="add-to-cart btn-dark" data-id="e5" data-name="Classic French Press" data-price="35.00" style="padding: 1rem 2rem;">Purchase</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Equipment 6: Digital Barista Scale -->
+        <div class="equipment-card product-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="equipment-image">
+                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                    <source src="https://player.vimeo.com/external/494191334.hd.mp4?s=1d575c3d9a9b7a421b8c0a969f6eeb6f1e67e3a9&profile_id=174" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="equipment-body">
+                <h3 class="card-title mb-1">Digital Barista Scale</h3>
+                <p class="text-body mb-2">Achieve consistency with 0.1g precision and a built-in timer for perfect brew ratios.</p>
+                
+                <div class="tip-box">
+                    <h4 class="tip-title">Precision:</h4>
+                    <p class="tip-text">Measure by weight, not volume. Standard golden ratio is 1:16 (coffee to water).</p>
+                </div>
+
+                <div class="flex-between mt-1">
+                    <span style="font-size: 1.8rem; font-weight: 700; color: var(--primary);">$55.00</span>
+                    <button class="add-to-cart btn-dark" data-id="e6" data-name="Digital Barista Scale" data-price="55.00" style="padding: 1rem 2rem;">Purchase</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <a href="index.html" class="logo">BEAN<span>BOUTIQUE</span></a>
+            <p class="footer-logo-section">Elevating your coffee experience since 2024.</p>
+        </div>
+        <div>
+            <h3 class="mb-1">Quick Links</h3>
+            <ul class="footer-links-list">
+                <li class="footer-link-item"><a href="selection.html" class="footer-link">Selection</a></li>
+                <li class="footer-link-item"><a href="equipment.html" class="footer-link">Equipment</a></li>
+                <li class="footer-link-item"><a href="events.html" class="footer-link">Events</a></li>
+                <li class="footer-link-item"><a href="contact.html" class="footer-link">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="mb-1">Support</h3>
+            <p class="footer-contact-item"><i class="fas fa-truck mr-1"></i> Free Shipping on Equipment</p>
+            <p class="footer-contact-item"><i class="fas fa-undo mr-1"></i> 30-Day Happiness Guarantee</p>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Add to Cart Functionality (Reuse or import logic)
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const id = button.dataset.id;
+                const name = button.dataset.name;
+                const price = parseFloat(button.dataset.price);
+                const image = button.closest('.product-card').querySelector('img').src;
+
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const existingItem = cart.find(item => item.id === id);
+
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({ id, name, price, image, quantity: 1 });
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+                window.updateCartCount();
+
+                Swal.fire({
+                    title: 'Added to Basket!',
+                    text: `${name} has been added to your shopping cart.`,
+                    icon: 'success',
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                });
+            });
+        });
+    </script>
+</body>
+</html>

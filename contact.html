@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Feedback - Bean Boutique Coffee</title>
+    <meta name="description" content="Get in touch with Bean Boutique Coffee. Share your feedback, rate your experience, and help us brew better moments.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .feedback-form-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid #eee;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1.5px solid #eee;
+            font-size: 1rem;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 4px rgba(141, 91, 76, 0.1);
+        }
+
+        /* Rating System */
+        .rating-wrapper {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .rating-wrapper input {
+            display: none;
+        }
+
+        .rating-wrapper label {
+            font-size: 2rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .rating-wrapper label:hover,
+        .rating-wrapper label:hover ~ label,
+        .rating-wrapper input:checked ~ label {
+            color: #ffb800;
+        }
+
+        .rating-wrapper label:active {
+            transform: scale(0.9);
+        }
+
+        /* Feedback Tags */
+        .feedback-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .tag-btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            border: 1.5px solid #eee;
+            background: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .tag-btn.selected {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        /* Testimonials/Comments section */
+        .comments-section {
+            margin-top: 5rem;
+        }
+
+        .comment-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 20px;
+            border-left: 5px solid var(--secondary);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .comment-rating {
+            color: #ffb800;
+            font-size: 0.9rem;
+        }
+
+        .comment-text {
+            color: #555;
+            font-style: italic;
+        }
+
+        @media (max-width: 968px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">BEAN<span>BOUTIQUE</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="selection.html">Selection</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fas fa-search"></i>
+                <div class="cart-icon" onclick="location.href='cart.html'">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <i class="fas fa-bars mobile-menu-btn"></i>
+            </div>
+        </nav>
+    </header>
+
+    <header class="page-header header-contact" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1920&auto=format&fit=crop');">
+        <h1 data-aos="fade-down">Connect With Us</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Share your coffee journey and help us brew perfection.</p>
+    </header>
+
+    <main class="container">
+        <div class="contact-container" data-aos="fade-up">
+            <!-- Left Side: Contact Info & Map/Visual -->
+            <div class="contact-info-side">
+                <h2 class="text-title">Get in Touch</h2>
+                <div class="accent-line"></div>
+                <p class="text-body">We're always open to suggestions, feedback, or just a friendly chat about coffee. Reach out using the form or visit us at our main roastery.</p>
+                
+                <div class="flex gap-1 mb-2">
+                    <div class="hover-box" style="flex: 1; padding: 1.5rem;">
+                        <i class="fas fa-map-marker-alt" style="font-size: 1.5rem; color: var(--secondary); margin-bottom: 0.5rem;"></i>
+                        <h4>Location</h4>
+                        <p class="text-muted">123 Espresso Ave, Coffee Town</p>
+                    </div>
+                    <div class="hover-box" style="flex: 1; padding: 1.5rem;">
+                        <i class="fas fa-envelope" style="font-size: 1.5rem; color: var(--secondary); margin-bottom: 0.5rem;"></i>
+                        <h4>Email</h4>
+                        <p class="text-muted">hello@beanboutique.com</p>
+                    </div>
+                </div>
+
+                <div class="image-grid-single rounded" style="height: 300px; overflow: hidden; position: relative;">
+                    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=1000&auto=format&fit=crop" alt="Coffee Roastery" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(255,255,255,0.9); padding: 1rem; border-radius: 10px;">
+                        <h4 style="color: var(--primary);">Open Hours</h4>
+                        <p style="font-size: 0.8rem;">Mon - Sun: 7:00 AM - 9:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Feedback Form -->
+            <div class="feedback-form-card">
+                <h3 class="mb-2" style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary);">Leave a Feedback</h3>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label>How would you rate your experience?</label>
+                        <div class="rating-wrapper">
+                            <input type="radio" name="rating" id="star5" value="5"><label for="star5" class="fas fa-star"></label>
+                            <input type="radio" name="rating" id="star4" value="4"><label for="star4" class="fas fa-star"></label>
+                            <input type="radio" name="rating" id="star3" value="3"><label for="star3" class="fas fa-star"></label>
+                            <input type="radio" name="rating" id="star2" value="2"><label for="star2" class="fas fa-star"></label>
+                            <input type="radio" name="rating" id="star1" value="1"><label for="star1" class="fas fa-star"></label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" placeholder="john@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Feedback Type</label>
+                        <div class="feedback-tags">
+                            <button type="button" class="tag-btn selected">Product Quality</button>
+                            <button type="button" class="tag-btn">Service</button>
+                            <button type="button" class="tag-btn">Ambiance</button>
+                            <button type="button" class="tag-btn">Other</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Message / Review</label>
+                        <textarea class="form-control" rows="4" placeholder="Tell us what you think..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary w-100" style="width: 100%;">Submit Feedback</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="comments-section" data-aos="fade-up">
+            <h2 class="text-title text-center">Recent Guest Reviews</h2>
+            <div class="accent-line mx-auto" style="margin: 0 auto 3rem;"></div>
+            
+            <div class="grid grid-2 gap-2">
+                <div class="comment-card">
+                    <div class="comment-header">
+                        <div class="user-info">
+                            <div class="user-avatar">SL</div>
+                            <div>
+                                <h4 style="color: var(--primary);">Sophia Lane</h4>
+                                <p style="font-size: 0.8rem; color: #999;">2 days ago</p>
+                            </div>
+                        </div>
+                        <div class="comment-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="comment-text">"The Ethiopian Yirgacheffe is life-changing. Best roast I've ever had at home. The staff's brewing tips were spot on!"</p>
+                </div>
+
+                <div class="comment-card">
+                    <div class="comment-header">
+                        <div class="user-info">
+                            <div class="user-avatar" style="background: var(--secondary);">MR</div>
+                            <div>
+                                <h4 style="color: var(--primary);">Marcus Reed</h4>
+                                <p style="font-size: 0.8rem; color: #999;">5 days ago</p>
+                            </div>
+                        </div>
+                        <div class="comment-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="comment-text">"Love the ambiance of the shop. I bought a Hario V60 set and it's built to last. Great service as always."</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <a href="index.html" class="logo">BEAN<span>BOUTIQUE</span></a>
+            <p class="footer-logo-section">Elevating your coffee experience since 2024.</p>
+            <div class="flex gap-2 mt-2 footer-social-icons">
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
+                <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div>
+            <h3 class="mb-1">Quick Links</h3>
+            <ul class="footer-links-list">
+                <li class="footer-link-item"><a href="selection.html" class="footer-link">Selection</a></li>
+                <li class="footer-link-item"><a href="equipment.html" class="footer-link">Equipment</a></li>
+                <li class="footer-link-item"><a href="events.html" class="footer-link">Events</a></li>
+                <li class="footer-link-item"><a href="contact.html" class="footer-link">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="mb-1">Visit Us</h3>
+            <p class="footer-logo-section mb-1"><i class="fas fa-location-dot mr-1"></i> 123 Espresso Avenue, Coffee Town</p>
+            <p class="footer-logo-section"><i class="fas fa-phone mr-1"></i> +1 (555) BEAN-COF</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Tag selection logic
+        const tags = document.querySelectorAll('.tag-btn');
+        tags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                tags.forEach(t => t.classList.remove('selected'));
+                tag.classList.add('selected');
+            });
+        });
+
+        // Form Submission
+        document.getElementById('feedbackForm').onsubmit = (e) => {
+            e.preventDefault();
+            const rating = document.querySelector('input[name="rating"]:checked')?.value || 0;
+            alert(`Thank you for your ${rating} star feedback! We've received your message.`);
+            e.target.reset();
+            tags.forEach(t => t.classList.remove('selected'));
+            tags[0].classList.add('selected');
+        };
+    </script>
+</body>
+
+</html>

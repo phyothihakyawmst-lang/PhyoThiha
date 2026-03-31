@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique Coffee - Premium Coffee Experience</title>
+    <meta name="description"
+        content="Welcome to Bean Boutique Coffee, where every cup tells a story. Premium blends, artisanal brewing, and a community space.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">BEAN<span>BOUTIQUE</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="selection.html">Selection</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fas fa-search"></i>
+                <div class="cart-icon" onclick="location.href='cart.html'">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <i class="fas fa-bars mobile-menu-btn"></i>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="images/BackgroudCoffee.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-container">
+            <div class="hero-text-side">
+                <h1>Crafting <br> Exceptional <br> <span>Moments.</span></h1>
+                <p>Curating the world's most unique coffee roasts and equipment for the dedicated home barista. Find
+                    your flavor in our artisan collection.</p>
+                <div class="flex gap-2 mt-2">
+                    <a href="selection.html" class="hero-btn-main">View Catalogue</a>
+                    <a href="cart.html" class="hero-btn-outline">View Basket</a>
+                </div>
+            </div>
+
+            <!-- photo slide show -->
+            <div class="hero-slideshow-side">
+                <div class="swiper side-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1: Selection -->
+                        <div class="swiper-slide side-slide">
+                            <div class="hero-card" style="background-image: url('images/coffee-img1.jpg');"
+                                onclick="location.href='selection.html'">
+                                <div class="card-overlay">
+                                    <h3>Roasts</h3>
+                                    <p>Find your blend</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2: Equipment -->
+                        <div class="swiper-slide side-slide">
+                            <div class="hero-card" style="background-image: url('images/coffee-img2.jpg');"
+                                onclick="location.href='equipment.html'">
+                                <div class="card-overlay">
+                                    <h3>Brewware</h3>
+                                    <p>Precision tools</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3: Events -->
+                        <div class="swiper-slide side-slide">
+                            <div class="hero-card" style="background-image: url('images/coffee-img3.jpg');"
+                                onclick="location.href='events.html'">
+                                <div class="card-overlay">
+                                    <h3>Workshops</h3>
+                                    <p>Master the art</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 4: Food -->
+                        <div class="swiper-slide side-slide">
+                            <div class="hero-card"
+                                style="background-image: url('https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=800&auto=format&fit=crop');"
+                                onclick="location.href='selection.html'">
+                                <div class="card-overlay">
+                                    <h3>Brunch</h3>
+                                    <p>Fresh & Healthy</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section (Video Story) -->
+    <section class="container story-section" data-aos="fade-up">
+        <div class="grid gap-4 grid-story items-center">
+            <div class="image-grid-single">
+                <video autoplay muted loop playsinline>
+                    <source src="images/making-coffee-2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="content">
+                <h2 class="text-title">The Bean Boutique Story</h2>
+                <div class="accent-line"></div>
+                <p class="text-body">At Bean Boutique, we believe coffee is more than just a drink. It's an experience
+                    of warmth, community, and handcrafted excellence.</p>
+                <div class="flex gap-2">
+                    <div class="hover-box">
+                        <i class="fas fa-leaf"
+                            style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                        <h3>Sustainably Sourced</h3>
+                        <p style="font-size: 0.9rem; color: #777;">Supporting local farmers and ecosystems.</p>
+                    </div>
+                    <div class="hover-box">
+                        <i class="fas fa-mug-hot"
+                            style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                        <h3>Expertly Roasted</h3>
+                        <p style="font-size: 0.9rem; color: #777;">Capturing the essence of every bean.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <div class="promo-decoration"><i class="fas fa-coffee"></i></div>
+        <div data-aos="fade-right">
+            <h2 class="mb-1" style="font-size: 2.5rem;">Exclusive Coffee Rewards</h2>
+            <p class="text-body mb-2" style="color: white; opacity: 0.9;">Subscribe to our newsletter for early access
+                to limited edition roasts and events.</p>
+            <div class="promo-input-group">
+                <input type="email" placeholder="Enter your email" class="promo-input">
+                <button class="btn-primary" class="rounded">Subscribe</button>
+            </div>
+        </div>
+        <div data-aos="fade-left">
+            <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1000&auto=format&fit=crop"
+                class="promo-image">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <a href="index.html" class="logo">BEAN<span>BOUTIQUE</span></a>
+            <p class="footer-logo-section">Elevating your coffee experience since 2024.</p>
+            <div class="flex gap-2 mt-2 footer-social-icons">
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
+                <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div>
+            <h3 class="mb-1">Quick Links</h3>
+            <ul class="footer-links-list">
+                <li class="footer-link-item"><a href="selection.html" class="footer-link">Selection</a></li>
+                <li class="footer-link-item"><a href="equipment.html" class="footer-link">Equipment</a></li>
+                <li class="footer-link-item"><a href="events.html" class="footer-link">Events</a></li>
+                <li class="footer-link-item"><a href="contact.html" class="footer-link">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="mb-1">Visit Us</h3>
+            <p class="footer-logo-section mb-1"><i class="fas fa-location-dot mr-1"></i> 123 Espresso Avenue, Coffee
+                Town</p>
+            <p class="footer-logo-section"><i class="fas fa-phone mr-1"></i> +1 (555) BEAN-COF</p>
+        </div>
+    </footer>
+
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="closeModal" class="close-btn">&times;</button>
+            <div class="modal-icon"><i class="fas fa-gift"></i></div>
+            <h2 class="modal-title">Welcome to the Family!</h2>
+            <p class="modal-body">Unlock a <strong>15% discount</strong> on your first purchase.</p>
+            <div class="modal-form">
+                <input type="email" placeholder="Enter your email address">
+                <button class="btn-primary rounded-10">Claim My Discount</button>
+            </div>
+            <p class="modal-footer-text" id="noThanks">No thanks, I'll pay full price</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        var swiper = new Swiper(".side-swiper", {
+            loop: true,
+            effect: "cards",
+            grabCursor: true,
+            slideToClickedSlide: true,
+            perSlideRotate: 2,
+            perSlideOffset: 100,
+            cardsEffect: {
+                slideShadows: false,
+                rotate: true,
+            },
+            autoplay: { delay: 3000, disableOnInteraction: false },
+            observer: true,
+            observeParents: true,
+        });
+        // Force update on load to handle grid rendering
+        window.addEventListener('load', () => {
+            swiper.update();
+            // Hover logic – make slides jump to front on hover
+            document.querySelectorAll('.side-slide').forEach((slide) => {
+                slide.addEventListener('mouseenter', () => {
+                    const index = slide.getAttribute('data-swiper-slide-index');
+                    if (index !== null) {
+                        swiper.slideToLoop(parseInt(index));
+                    }
+                });
+            });
+        });
+        window.addEventListener('load', () => {
+            if (!localStorage.getItem('modalClosed')) {
+                setTimeout(() => { document.getElementById('welcomeModal').style.display = 'flex'; }, 2000);
+            }
+        });
+        document.getElementById('closeModal').onclick = () => {
+            document.getElementById('welcomeModal').style.display = 'none';
+            localStorage.setItem('modalClosed', 'true');
+        };
+        document.getElementById('noThanks').onclick = () => {
+            document.getElementById('welcomeModal').style.display = 'none';
+            localStorage.setItem('modalClosed', 'true');
+        };
+    </script>
+</body>
+
+</html>
